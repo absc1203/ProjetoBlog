@@ -11,17 +11,17 @@ import { AuthService } from '../service/auth.service';
 })
 export class EntrarComponent implements OnInit {
 
-
+//instanciando a classe UserLogin
   userLogin: UserLogin = new UserLogin
  
 
   constructor(
-    private auth: AuthService,
-    private router: Router
+    private auth: AuthService, //classe que vai trazer os atributos do auth.services.ts
+    private router: Router //classe que vai fazer o RouterLink no Angular
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0,0) //mouse começar no inicio da página
   }
 
   entrar(){
@@ -33,14 +33,16 @@ export class EntrarComponent implements OnInit {
     environment.foto = this.userLogin.foto
     environment.id = this.userLogin.id
 
+    /*
     console.log(environment.token)
-    console.log(environment.nome)
+    console.log(environment.nome)  para saber se os dados estão sendo recebidos
     console.log(environment.foto)
     console.log(environment.id)
+    */
 
-    this.router.navigate(['/inicio'])
+    this.router.navigate(['/inicio']) //ir para a página inicio quando logar
 
-  }, erro =>{
+  }, erro =>{ //tratamento de erro 500
     if(erro.status == 500){
       alert('Usuário ou senha incorretos')
     }
