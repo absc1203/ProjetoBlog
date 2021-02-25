@@ -22,6 +22,8 @@ export class EntrarComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0) //mouse começar no inicio da página
+
+    environment.token = ''
   }
 
   entrar(){
