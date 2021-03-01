@@ -18,13 +18,16 @@ export class EntrarComponent implements OnInit {
   constructor(
     private auth: AuthService, //classe que vai trazer os atributos do auth.services.ts
     private router: Router //classe que vai fazer o RouterLink no Angular
-  ) { }
+  ) {
+    environment.token = ''
+   }
 
   ngOnInit() {
     window.scroll(0,0) //mouse começar no inicio da página
 
-    environment.token = ''
   }
+
+  
 
   entrar(){
     this.auth.entrar(this.userLogin).subscribe((resp: UserLogin) => {
@@ -35,12 +38,12 @@ export class EntrarComponent implements OnInit {
     environment.foto = this.userLogin.foto
     environment.id = this.userLogin.id
 
-    /*
+ /*
     console.log(environment.token)
-    console.log(environment.nome)  para saber se os dados estão sendo recebidos
+    console.log(environment.nome)  
     console.log(environment.foto)
     console.log(environment.id)
-    */
+  */
 
     this.router.navigate(['/inicio']) //ir para a página inicio quando logar
 
