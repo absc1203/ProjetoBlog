@@ -55,6 +55,7 @@ export class UserEditComponent implements OnInit {
       this.user = resp
       this.router.navigate(['/inicio'])
       this.alertas.showAlertSuccess('Usuario atualizado com Sucesso, faça login novamente')
+      
       environment.id = 0
       environment.nome = ''
       environment.foto = ''

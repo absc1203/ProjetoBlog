@@ -27,3 +27,10 @@ ul.social-network li{
     color: #0e76a8;
 }
 
+.bg{
+    background-image: url('../../assets/img/fundo-pixel.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+

@@ -1,0 +1,11 @@
+.bg{
+    background-image: url('../../assets/img/fundo-pixel.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.borda{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+}

@@ -1,13 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-.fs-54{
+body {
+    font-family: 'Abril Fatface', cursive !important;
+    font-family: 'Fascinate', cursive !important;
+    font-family: 'Fjalla One', sans-serif !important;
+    font-family: 'Fredoka One', cursive !important;    
+}
+
+.fs-54 {
     font-size: 54pt;
 }
 
-.fs-18{
+.fs-18 {
     font-size: 18pt;
 }
