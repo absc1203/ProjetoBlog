@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
@@ -29,6 +30,10 @@ export class InicioComponent implements OnInit {
 
   key = 'data'
   reverse = true
+
+  tituloPost: string
+
+  nomeTema: string
  
 
 
@@ -49,6 +54,29 @@ export class InicioComponent implements OnInit {
     }
     this.getAllTemas()
     this.getAllPostagens()
+  }
+
+  findByTituloPostagem(){
+    if(this.tituloPost == ''){
+      this.getAllPostagens()
+    }else{
+      this.postagemService.getByTitiuloPostagem(this.tituloPost).subscribe((resp: Postagem[])=>{
+        this.listaPostagens = resp
+      })
+    }
+
+    
+  }
+
+  findByNomeTema(){
+    if(this.nomeTema == ''){
+      this.getAllPostagens()
+    }else{
+      this.temaService.getByDescricaoTema(this.nomeTema).subscribe((resp : Tema[])=> {
+        this.listaTemas = resp
+      })
+    }
+
   }
 
 
